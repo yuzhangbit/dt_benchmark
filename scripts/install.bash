@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+set -e  # exit on first error
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR=/tmp
+
+
+main()
+{
+    sudo apt-get install libopencv-dev
+    install_benchmark
+}
+
+
+install_benchmark()
+{
+    cd $DIR && rm -rf benchmark
+    git clone https://github.com/google/benchmark.git
+    cd benchmark
+    mkdir build && cd build
+    cmake .. -DCMAKE_BUILD_TYPE=RELEASE
+    make -j$(nproc)
+    sudo make install
+}
+
+
+
+
+main
