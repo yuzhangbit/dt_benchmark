@@ -16,7 +16,7 @@ install_benchmark()
 {
     cd $DIR && rm -rf benchmark
     git clone https://github.com/google/benchmark.git
-    cd benchmark
+    cd benchmark && git clone https://github.com/google/googletest.git
     mkdir build && cd build
     cmake .. -DCMAKE_BUILD_TYPE=RELEASE
     make -j$(nproc)
