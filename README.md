@@ -10,7 +10,7 @@ The codes have been tested in Ubuntu 16.04.
   ```bash
   git clone https://github.com/yuzhangbit/dt_benchmark.git
   cd dt_benchmark
-  bash script/install.bash # install dependencies 
+  bash scripts/install.bash # install dependencies 
   ```
 
 * Build the codes
