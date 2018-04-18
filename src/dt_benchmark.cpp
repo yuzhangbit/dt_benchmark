@@ -15,7 +15,9 @@ using namespace std;
 // 2d distance transform benchmark
 static void DistanceTransform(benchmark::State& state) {
     // binary grid map
-    static cv::Mat binary_map(800, 800, CV_8UC1);
+    std::size_t width = 800; // adjustable
+    std::size_t length = 800; // adjustable
+    static cv::Mat binary_map(width, length, CV_8UC1);
     cv::randu(binary_map, 0, 255);
     unsigned char threshold = 127;
     unsigned char binary_MAX = 1;
